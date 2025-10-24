@@ -18,7 +18,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = ['story_mode', 'freeplay', #if MODS_ALLOWED 'mods', #end 'options'];
 
 	var magenta:FlxSprite;
-	var camFollow:FlxObject;
+	//var camFollow:FlxObject;
 
 	override function create()
 	{
@@ -46,8 +46,8 @@ class MainMenuState extends MusicBeatState
 		bg.screenCenter();
 		add(bg);
 
-		camFollow = new FlxObject(0, 0, 1, 1);
-		add(camFollow);
+		//camFollow = new FlxObject(0, 0, 1, 1);
+		//add(camFollow);
 
 		magenta = new FlxSprite(-80).loadGraphic(Paths.image('menuDesat'));
 		magenta.antialiasing = ClientPrefs.data.antialiasing;
@@ -65,7 +65,7 @@ class MainMenuState extends MusicBeatState
 		for (i in 0...optionShit.length)
 		{
 			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
+			var menuItem:FlxSprite = new FlxSprite(30, (i * 140) + offset);
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
@@ -77,7 +77,7 @@ class MainMenuState extends MusicBeatState
 				scr = 0;
 			menuItem.scrollFactor.set(0, scr);
 			menuItem.updateHitbox();
-			menuItem.screenCenter(X);
+			//menuItem.screenCenter(X);
 		}
 
 		var shadowVer:FlxText = new FlxText(12, FlxG.height - 64, 0, "Shadow Engine v" + shadowEngineVersion, 12);
@@ -98,7 +98,7 @@ class MainMenuState extends MusicBeatState
 
 		super.create();
 
-		FlxG.camera.follow(camFollow, null, 9);
+		//FlxG.camera.follow(camFollow, null, 9);
 	}
 
 	var selectedSomethin:Bool = false;
