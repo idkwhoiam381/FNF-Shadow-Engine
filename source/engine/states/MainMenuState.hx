@@ -202,7 +202,7 @@ class MainMenuState extends MusicBeatState
 		menuItems.members[curSelected].centerOffsets();
 		//menuItems.members[curSelected].screenCenter(X);
 
-		camFollow.setPosition(menuItems.members[curSelected].getGraphicMidpoint().x,
+		//camFollow.setPosition(menuItems.members[curSelected].getGraphicMidpoint().x,
 			menuItems.members[curSelected].getGraphicMidpoint().y - (menuItems.length > 4 ? menuItems.length * 8 : 0));
 	}
 }
